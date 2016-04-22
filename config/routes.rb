@@ -1,5 +1,9 @@
 Myrottenpotatoes::Application.routes.draw do
-  resources :movies
+  # in routes.rb, change the line 'resources :movies' to:
+  resources :movies do
+    resources :reviews
+  end
+
   # root :to => redirect('/movies')
   post '/movies/search_tmdb'
 
@@ -12,6 +16,9 @@ Myrottenpotatoes::Application.routes.draw do
   match  'auth/:provider/callback' => 'sessions#create'
   match 'logout' => 'sessions#destroy'
   match  'auth/failure' => 'sessions#failure'
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,6 +1,7 @@
 class Movie < ActiveRecord::Base
   class Movie::InvalidKeyError < StandardError ; end
     attr_accessible :title, :rating, :description, :release_date
+    has_many :reviews
 
     def self.all_ratings ; %w[G PG PG-13 R NC-17] ; end #  shortcut: array of strings
 
