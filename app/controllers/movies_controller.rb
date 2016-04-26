@@ -16,7 +16,8 @@ class MoviesController < ApplicationController
   def show
     id = params[:id] # retrieve movie ID from URI route
     @movie = Movie.find(id) # look up movie by unique ID
-    # will render app/views/movies/show.html.haml by default
+    render(:partial => 'movie', :object => @movie) if request.xhr?
+    # will render app/views/movies/show.<extension> by default
   end
 
   # replaces the 'create' method in controller:
@@ -29,7 +30,7 @@ class MoviesController < ApplicationController
       render 'new' # note, 'new' template can access @movie's field values!
     end
   end
-  
+
   # replaces the 'update' method in controller:
   def update
     @movie = Movie.find params[:id]
