@@ -1,4 +1,6 @@
 Myrottenpotatoes::Application.routes.draw do
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
+
   # in routes.rb, change the line 'resources :movies' to:
   resources :movies do
     resources :reviews

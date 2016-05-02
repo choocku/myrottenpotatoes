@@ -8,11 +8,14 @@
       %th= link_to "Rating", order_movie_path("rating")
       %th= link_to "Release Date", order_movie_path("release_date")
       %th More Info
+      %th input date
   %tbody
     - @movies.each do |movie|
-      %tr{:class => ('adult' unless movie.rating =~ /^G|PG$/)}
+      %tr{:class => movie.rating }
         %td= movie.title
         %td= movie.rating
         %td= movie.release_date
         %td= link_to "More about #{movie.title}", movie_path(movie)
+        %td
+          %input{:type => "date"}
 = link_to 'Add new movie', new_movie_path
