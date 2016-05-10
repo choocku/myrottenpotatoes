@@ -11,6 +11,7 @@ gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'jasmine', '~> 1.3', '>= 1.3.2'
+  gem 'jasmine-jquery-rails'
 end
 
 # Gems used only for assets and not required
@@ -26,7 +27,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-# gem 'jasmine-jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
