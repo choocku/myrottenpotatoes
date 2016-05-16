@@ -6,10 +6,10 @@ Myrottenpotatoes::Application.routes.draw do
     resources :reviews
   end
 
-  root :to => redirect('/movies')
+  # root :to => redirect('/movies')
   post '/movies/search_tmdb'
 
-  # root :to => redirect('/sessions/logout')
+  root :to => redirect('/sessions/logout')
 
   get 'movies/:order/order' => 'movies#index', :as => 'order_movie'
 
