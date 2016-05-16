@@ -1,16 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'net-ssh', '~> 2.0'
 gem 'rails', '3.2.18'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
 gem 'haml'
 gem 'omniauth-facebook'
 gem 'minitest', '~> 4.7.5'
 gem 'themoviedb'
 gem 'jquery-rails'
+gem 'heroku'
 
 group :development, :test do
   gem 'jasmine', '~> 1.3', '>= 1.3.2'
@@ -23,6 +20,12 @@ group :development, :test do
   gem 'capybara'         # lets Cucumber pretend to be a web browser
   gem 'launchy'          # a useful debugging aid for user stories
   gem 'railroady'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 group :test do
