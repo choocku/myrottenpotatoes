@@ -57,4 +57,13 @@ class MoviesController < ApplicationController
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
   end
+
+  def search_tmdb
+    title = params[:search_terms]
+    @movies = Movie.find_in_tmdb(title)
+    if @movies.empty?
+     flash[:notice] = "'#{params[:search_terms]}' was not found in TMDb."
+     redirect_to movies_path
+    end
+  end
 end

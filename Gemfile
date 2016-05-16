@@ -8,10 +8,26 @@ gem 'rails', '3.2.18'
 gem 'sqlite3'
 gem 'haml'
 gem 'omniauth-facebook'
+gem 'minitest', '~> 4.7.5'
+gem 'themoviedb'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'jasmine', '~> 1.3', '>= 1.3.2'
   gem 'jasmine-jquery-rails'
+  gem 'simplecov', :require => false
+  gem 'debugger'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions
+  gem 'database_cleaner' # to clear Cucumber's test database between runs
+  gem 'capybara'         # lets Cucumber pretend to be a web browser
+  gem 'launchy'          # a useful debugging aid for user stories
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'autotest-rails'
+  gem 'ZenTest', '4.8.3'
 end
 
 # Gems used only for assets and not required
@@ -25,8 +41,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
